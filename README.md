@@ -1,6 +1,23 @@
 # HavenOnDemand library for Windows Universal 8.1. V2.0
 
-----
+Official ASP.NET client library to help with calling [Haven OnDemand APIs](http://havenondemand.com).
+
+## What is Haven OnDemand?
+Haven OnDemand is a set of over 70 APIs for handling all sorts of unstructured data. Here are just some of our APIs' capabilities:
+* Speech to text
+* OCR
+* Text extraction
+* Indexing documents
+* Smart search
+* Language identification
+* Concept extraction
+* Sentiment analysis
+* Web crawlers
+* Machine learning
+
+For a full list of all the APIs and to try them out, check out https://www.havenondemand.com/developer/apis
+
+
 ## Overview
 HODClient library for Windows Universal is a lightweight C# based API, which helps you easily access over 60 APIs from HPE HavenOnDemand platform.
 
@@ -32,8 +49,8 @@ HODClient library requires the .NET 4.5.
 * Creates and initializes an HODClient object.
 
 *Parameters:*
-* apiKey: your developer apikey.
-* version: Haven OnDemand API version. The default value is "v1".
+* `apiKey` your developer API_KEY.
+* `version` Haven OnDemand API version. The default value is "v1".
 
 *Example code:*
 
