@@ -192,6 +192,7 @@ hodClient.PostRequest(ref Params, hodApp, HODClient.REQ_MODE.ASYNC);
 * If the mode is "ASYNC", response will be returned via the requestCompletedWithJobID(String response) callback function.
 * If the mode is "SYNC", response will be returned via the requestCompletedWithContent(String response) callback function.
 * If there is an error occurred, the error message will be sent via the onErrorOccurred(String errorMessage) callback function.
+
 ----
 
 **Function PostRequestCombination**
@@ -207,27 +208,7 @@ hodClient.PostRequest(ref Params, hodApp, HODClient.REQ_MODE.ASYNC);
 > Note:
 
 > 1. File upload is not yet supported in this version
-> 2. For a parameter with its type is an array<>, the parameter must be defined in a List\<object\>.
-> E.g.:
 
-    var entity_type = new List<object>();
-    entity_type.Add("people_eng");
-    entity_type.Add("places_eng");
-    
-    StorageFile file1 = await StorageFile.GetFileFromPathAsync("c:\doc1.txt");
-    StorageFile file2 = await StorageFile.GetFileFromPathAsync("c:\doc2.txt");
-
-    var files = new List<object>();
-    files.Add(file1);
-    files.Add(file2);
-
-    var Params = new Dictionary<string, object>()
-    {
-        {"file", files },
-        {"entity_type", entity_type }
-    };
-
- 
 * hodApp: is the name of the combination API you are calling.
 * mode [REQ_MODE.SYNC | REQ_MODE.ASYNC]: specifies API call as Asynchronous or Synchronous. Default to REQ_MODE.ASYNC.
 
@@ -235,6 +216,7 @@ hodClient.PostRequest(ref Params, hodApp, HODClient.REQ_MODE.ASYNC);
 * If the mode is "ASYNC", response will be returned via the requestCompletedWithJobID(String response) callback function.
 * If the mode is "SYNC", response will be returned via the requestCompletedWithContent(String response) callback function.
 * If there is an error occurred, the error message will be sent via the onErrorOccurred(String errorMessage) callback function.
+
 ----
 
 **Function GetJobResult**
