@@ -133,7 +133,7 @@ namespace SpeechRecognition
                 {"interval", "20000" }
             };
             HodClient_onErrorOccurred("Submit Speech Recognition request. Please wait.");
-            hodClient.PostRequest(ref Params, HODApps.RECOGNIZE_SPEECH, HODClient.REQ_MODE.ASYNC);
+            hodClient.PostRequest(ref Params, HODApps.RECOGNIZE_SPEECH, true);
         }
         async private void LoadFilePicker(object sender, RoutedEventArgs e)
         {
