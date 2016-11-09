@@ -79,7 +79,7 @@ private void HodClient_onErrorOccurred(string errorMessage)
     
 }
 ```
-----
+
 If you want to change the API version without the need to recreate the instance of the HOD client.
 ```
 SetAPIVersion(String version)
@@ -92,7 +92,6 @@ SetAPIKey(String apiKey)
 ```
 * `apiKey` a string to specify a new API_KEY
 
-----
 ## Sending requests to the API - GET and POST
 You can send requests to the API with either a GET or POST request, where POST requests are required for uploading files and recommended for larger size queries and GET requests are recommended for smaller size queries.
 
@@ -166,6 +165,7 @@ var Params = new Dictionary<string, object>()
     {"entity_type", entity_type }
 };
 ```
+
 * `hodApp` a string to identify a Haven OnDemand API. E.g. "ocrdocument". Current supported apps are listed in the HODApps class.
 * `async` [true | false]: specifies API call as Asynchronous or Synchronous. Default to true.
 * `version` is a string to specify an API version. Can be omitted or an empty string.
@@ -194,8 +194,6 @@ void GetRequestCombination(ref Dictionary<String, Object> Params, String hodApp,
 * `hodApp` is the name of the combination API you are calling.
 * `async` [true | false] specifies API call as Asynchronous or Synchronous. Default to true.
 
-----
-
 ### Function PostRequestCombination
 
 Sends a HTTP POST request for Haven OnDemand combination API.
@@ -212,8 +210,6 @@ void PostRequestCombination(ref Dictionary<String, Object> Params, String hodApp
 
 * `hodApp` is the name of the combination API you are calling.
 * `async` [true | false] specifies API call as Asynchronous or Synchronous. Default to true.
-
-----
 
 ### Function GetJobResult
 
@@ -293,7 +289,7 @@ void hodClient_requestCompletedWithJobID(string response)
         hodClient.GetJobResult(jobID);
 }
 ```
----
+
 ## Parse Haven OnDemand APIs' response
 
 Parses a json string and returns a class object.
@@ -345,7 +341,6 @@ void client_requestCompletedWithContent(string response)
 }
 ```
 
----
 **Function ParseCustomResponse**
 ```
 object ParseCustomResponse<T>(jsonStr)
