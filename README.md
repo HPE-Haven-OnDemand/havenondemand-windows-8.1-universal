@@ -40,25 +40,12 @@ HODClient library requires the .NET 4.5.
 3. Select a package and click Install.
 
 ----
-## HODClient API References
-**Constructor**
-
-    HODClient(string apiKey, String version="v1")
-
-*Description:* 
-* Creates and initializes an HODClient object.
-
-*Parameters:*
-* `apiKey` your developer API_KEY.
-* `version` Haven OnDemand API version. The default value is "v1".
-
-*Example code:*
-
-    using HOD.Client;
-    using HOD.Response.Parser;
-
-    HODClient hodClient = new HODClient("API_KEY");
-
+## Using HODClient package
+```
+using HOD.Client;
+HODClient client = new HODClient("API_KEY", "v1");
+```
+where you replace "API_KEY" with your API key found [here](https://www.havenondemand.com/account/api-keys.html). `version` is an *optional* parameter which can be either `"v1"` or `"v2"`, but defaults to `"v1"` if not specified.
 
 ## Define and implement callback functions
 You will need to implement callback functions to receive responses from Haven OnDemand server
@@ -168,14 +155,11 @@ void PostRequestSync(ref Dictionary<String, Object> Params, String hodApp, Boole
 var entity_type = new List<object>();
 entity_type.Add("people_eng");
 entity_type.Add("places_eng");
-    
 StorageFile file1 = await StorageFile.GetFileFromPathAsync("c:\doc1.txt");
 StorageFile file2 = await StorageFile.GetFileFromPathAsync("c:\doc2.txt");
-
 var files = new List<object>();
 files.Add(file1);
 files.Add(file2);
-
 var Params = new Dictionary<string, object>()
 {
     {"file", files },
@@ -198,9 +182,7 @@ var Params =  new Dictionary<String,Object>
 };
 hodClient.PostRequest(ref Params, hodApp, HODClient.REQ_MODE.ASYNC);
 ```
-----
 
-**Function GetRequestCombination**
 ### Function GetRequestCombination
 
 Sends a HTTP GET request for Haven OnDemand combination API.
@@ -214,7 +196,7 @@ void GetRequestCombination(ref Dictionary<String, Object> Params, String hodApp,
 
 ----
 
-**Function PostRequestCombination**
+### Function PostRequestCombination
 
 Sends a HTTP POST request for Haven OnDemand combination API.
 ```
