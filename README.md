@@ -136,7 +136,7 @@ var Params = new Dictionary<string, object>()
     {"entity_type", entity_type }
 };
 
-hodClient.GetRequest(ref Params, hodApp, HODClient.REQ_MODE.SYNC);
+hodClient.GetRequest(ref Params, hodApp, false);
 ```
 
 ### Function PostRequest
@@ -180,7 +180,7 @@ var Params =  new Dictionary<String,Object>
     {"file", file},
     {"mode", "document_photo"}
 };
-hodClient.PostRequest(ref Params, hodApp, HODClient.REQ_MODE.ASYNC);
+hodClient.PostRequest(ref Params, hodApp, true);
 ```
 
 ### Function GetRequestCombination
